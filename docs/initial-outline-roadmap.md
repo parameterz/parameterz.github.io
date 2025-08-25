@@ -29,7 +29,7 @@ Create a portfolio website to showcase medical/echocardiography projects and too
 
 ### Visual Design Requirements
 - Clean, professional aesthetic suitable for medical/clinical context
-- Incorporate existing brand element: **(z)** - stylized "z" in parentheses
+- Incorporate existing brand element: **(z)** 
 - Interesting banner/hero image
 - Featured projects prominently displayed
 - Project cards in categorized grid layout
@@ -41,7 +41,7 @@ Create a portfolio website to showcase medical/echocardiography projects and too
 ### Technology Stack
 - **Static Site Generator**: 11ty (Eleventy)
 - **Deployment**: GitHub Pages
-- **Content Management**: Data-driven approach using JSON files
+- **Content Management**: Data-driven approach using data files (prefer JS/TS, MD, or yaml)
 
 ### Data Structure
 ```
@@ -140,4 +140,4 @@ projects.json structure per item:
 5. Plan content creation (screenshots, descriptions)
 
 ---
-*This roadmap serves as the foundation for developing a professional portfolio site that showcases medical and echocardiography projects while providing easy navigation and future extensibility for blogging.*
+*This roadmap serves as the foundation for developing a professional portfolio site that showcases projects while providing easy navigation and future extensibility for blogging.*
