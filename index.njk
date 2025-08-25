@@ -1,0 +1,50 @@
+---
+# index.njk - Main portfolio page for parameterz.github.io
+layout: layouts/base.njk
+title: Portfolio
+description: Portfolio site for parameterz.com showcasing my echocardiography projects, tools, and educational resources.
+---
+
+<!-- Hero Section -->
+<section class="hero">
+    <h1>Parameter<span class="brand-z">(z)</span> Projects</h1>
+    <a href="#featured" role="button" class="primary">Explore Projects</a>
+    <p>A collection of my echocardiography and medical projects, tools, and educational resources.</p>
+</section>
+
+<!-- Featured Projects Section -->
+<section id="featured" class="featured-section">
+    <h2 class="section-title">Featured Projects</h2>
+    <div class="projects-grid">
+        {% for project in projects %}
+            {% if project.featured %}
+                {% include "components/project-card.njk" %}
+            {% endif %}
+        {% endfor %}
+    </div>
+</section>
+
+<!-- All Projects by Category -->
+{% set categorizedProjects = collections.projectsByCategory %}
+{% for categoryName, categoryProjects in categorizedProjects %}
+    <section class="category-section">
+        <h2 class="category-title">{{ categoryName }}</h2>
+        <div class="projects-grid">
+            {% for project in categoryProjects %}
+                {% include "components/project-card.njk" %}
+            {% endfor %}
+        </div>
+    </section>
+{% endfor %}
+
+<!-- Call to Action Section -->
+<section class="cta-section" style="text-align: center; margin-top: 4rem; padding: 2rem; background: var(--pico-card-background-color); border-radius: var(--pico-border-radius);">
+    <h2>Web Tools for Echocardiography</h2>
+    <p>Mine is a special brand of laziness. I would rather spend time up front building a tool that will help save me moments of time at the bedside. </p>
+    <p>
+        These are some of those tools.
+    </p>
+    <p>
+        <a href="https://github.com/parameterz" target="_blank" rel="noopener" role="button" class="outline">View All on GitHub</a>
+    </p>
+</section>

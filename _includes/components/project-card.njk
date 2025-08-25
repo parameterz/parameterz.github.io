@@ -1,0 +1,183 @@
+<!-- _includes/components/project-card.njk -->
+<!-- Reusable project card component for parameterz portfolio -->
+<article class="project-card">
+    {% if project.image %}
+        <div class="project-image">
+            <img src="/assets/images/{{ project.image }}" alt="{{ project.title }} screenshot" loading="lazy">
+        </div>
+    {% else %}
+        <div class="project-placeholder">
+            <div class="placeholder-icon">
+                {% if project.category == "Normal Values" %}📊
+                {% elif project.category == "Echo/Clinical Tools" %}🩺
+                {% elif project.category == "Teaching" %}📚
+                {% else %}🔧
+                {% endif %}
+            </div>
+        </div>
+    {% endif %}
+    
+    <div class="project-content">
+        <header class="project-header">
+            <h3><a href="{{ project.url }}" target="_blank" rel="noopener">{{ project.title }}</a></h3>
+            <div class="project-meta">
+                <small class="project-status">{{ project.status | statusBadge }}</small>
+                <small class="project-date">Updated {{ project.date | dateFormat }}</small>
+            </div>
+        </header>
+        
+        <p class="project-description">{{ project.description }}</p>
+        
+        {% if project.tags and project.tags.length > 0 %}
+            <div class="project-tags">
+                {% for tag in project.tags %}
+                    <span class="tag">{{ tag }}</span>
+                {% endfor %}
+            </div>
+        {% endif %}
+        
+        <footer class="project-actions">
+            <a href="{{ project.url }}" target="_blank" rel="noopener" role="button" class="primary">View Project</a>
+            <a href="{{ project.repo }}" target="_blank" rel="noopener" role="button" class="secondary outline">GitHub</a>
+        </footer>
+    </div>
+</article>
+
+<style>
+/* Project card styling */
+.project-card {
+    background: var(--pico-card-background-color);
+    border: 1px solid var(--pico-card-border-color);
+    border-radius: var(--pico-border-radius);
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Project image/placeholder */
+.project-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid var(--pico-border-color);
+}
+
+.project-placeholder {
+    height: 200px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid var(--pico-border-color);
+}
+
+.placeholder-icon {
+    font-size: 3rem;
+    opacity: 0.6;
+}
+
+/* Project content */
+.project-content {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-header {
+    margin-bottom: 1rem;
+}
+
+.project-header h3 {
+    margin-bottom: 0.5rem;
+}
+
+.project-header h3 a {
+    color: var(--pico-color);
+    text-decoration: none;
+}
+
+.project-header h3 a:hover {
+    color: var(--brand-red);
+    text-decoration: underline;
+}
+
+.project-meta {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.project-status {
+    font-weight: 600;
+}
+
+.project-date {
+    color: var(--pico-muted-color);
+}
+
+.project-description {
+    flex-grow: 1;
+    margin-bottom: 1rem;
+    color: var(--pico-muted-color);
+    line-height: 1.6;
+}
+
+/* Tags */
+.project-tags {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tag {
+    background: var(--pico-background-color);
+    color: var(--pico-muted-color);
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.85rem;
+    border: 1px solid var(--pico-border-color);
+}
+
+/* Action buttons */
+.project-actions {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: auto;
+}
+
+.project-actions a[role="button"] {
+    flex: 1;
+    text-align: center;
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+}
+
+/* Featured project styling */
+.featured-section .project-card {
+    border-left: 4px solid var(--brand-red);
+}
+
+.featured-section .project-card:hover {
+    border-left-color: var(--brand-red-hover);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .project-actions {
+        flex-direction: column;
+    }
+    
+    .project-actions a[role="button"] {
+        margin-bottom: 0.5rem;
+    }
+}
+</style>

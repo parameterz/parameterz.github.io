@@ -1,0 +1,28 @@
+{
+  "name": "parameterz-portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio website for Parameter(z) medical and echocardiography projects",
+  "scripts": {
+    "start": "eleventy --serve --watch",
+    "build": "eleventy",
+    "clean": "rm -rf _site",
+    "dev": "npm start"
+  },
+  "keywords": [
+    "medical",
+    "echocardiography",
+    "portfolio",
+    "healthcare",
+    "clinical-tools"
+  ],
+  "author": "Parameter(z)",
+  "license": "MIT",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/parameterz/parameterz.github.io.git"
+  },
+  "homepage": "https://parameterz.github.io"
+}

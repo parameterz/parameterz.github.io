@@ -1,0 +1,140 @@
+<!-- _includes/layouts/base.njk -->
+<!-- Base template for parameterz.github.io portfolio -->
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if title %}{{ title }} | {% endif %}Parameter(z) - Medical & Echo Projects</title>
+    <meta name="description" content="{% if description %}{{ description }}{% else %}Portfolio of medical and echocardiography projects, tools, and educational resources.{% endif %}">
+    
+    <!-- Pico CSS v2.0 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    
+    <!-- Custom CSS for clinical theme -->
+    <style>
+        /* Clinical Grayscale with Cardiac Accents Theme */
+        :root {
+            /* Override Pico's default colors with clinical theme */
+            --pico-background-color: #FAFAFA;
+            --pico-color: #333333;
+            --pico-muted-color: #666666;
+            --pico-primary-background: #C53030;
+            --pico-primary-hover-background: #B02A2A;
+            --pico-primary-focus-background: #C53030;
+            --pico-card-background-color: #F5F5F5;
+            --pico-card-border-color: #E2E8F0;
+            --pico-border-color: #E2E8F0;
+            
+            /* Custom properties for parameterz branding */
+            --brand-red: #C53030;
+            --brand-red-hover: #B02A2A;
+        }
+        
+        /* Parameterz brand styling */
+        .brand-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--pico-color);
+            text-decoration: none;
+        }
+        
+        .brand-z {
+            color: var(--brand-red);
+            font-weight: 900;
+        }
+        
+        /* Hero section */
+        .hero {
+            text-align: center;
+            padding: 3rem 0;
+            margin-bottom: 2rem;
+        }
+        
+        .hero h1 {
+            margin-bottom: 1rem;
+            color: var(--pico-color);
+        }
+        
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--pico-muted-color);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+        
+        /* Project grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        /* Featured projects section */
+        .featured-section {
+            margin-bottom: 3rem;
+        }
+        
+        .section-title {
+            border-bottom: 2px solid var(--brand-red);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--pico-color);
+        }
+        
+        /* Category sections */
+        .category-section {
+            margin-bottom: 3rem;
+        }
+        
+        .category-title {
+            color: var(--pico-muted-color);
+            border-bottom: 1px solid var(--pico-border-color);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Footer */
+        footer {
+            margin-top: 4rem;
+            padding: 2rem 0;
+            border-top: 1px solid var(--pico-border-color);
+            text-align: center;
+            color: var(--pico-muted-color);
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero {
+                padding: 2rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="container">
+        <nav>
+            <ul>
+                <li><a href="/" class="brand-logo">Parameter<span class="brand-z">(z)</span></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        {{ content | safe }}
+    </main>
+
+    <footer class="container">
+        <p>
+            Parameter<span class="brand-z">(z)</span> Medical & Echocardiography Projects
+            <br>
+            <small>Professional tools and educational resources for healthcare professionals</small>
+        </p>
+    </footer>
+</body>
+</html>
