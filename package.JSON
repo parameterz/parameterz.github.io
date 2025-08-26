@@ -1,6 +1,6 @@
 {
   "name": "parameterz-portfolio",
-  "version": "1.0.0",
+  "version": "0.0.2",
   "description": "Portfolio website for Parameter(z) medical and echocardiography projects",
   "scripts": {
     "start": "eleventy --serve --watch",
