@@ -1,6 +1,6 @@
 <!-- _includes/components/project-card.njk -->
 <!-- Reusable project card component for parameterz portfolio -->
-<article class="project-card">
+<article class="project-card" data-status="{{ project.status }}">
     {% if project.image %}
         <div class="project-image">
             <img src="/assets/images/{{ project.image }}" alt="{{ project.title }} screenshot" loading="lazy">
@@ -26,7 +26,7 @@
             </div>
         </header>
         
-        <p class="project-description">{{ project.description }}</p>
+        <p class="project-description">{{ project.description|safe }}</p>
         
         {% if project.tags and project.tags.length > 0 %}
             <div class="project-tags">
@@ -38,7 +38,9 @@
         
         <footer class="project-actions">
             <a href="{{ project.url }}" target="_blank" rel="noopener" role="button" class="primary">View Project</a>
-            <a href="{{ project.repo }}" target="_blank" rel="noopener" role="button" class="secondary outline">GitHub</a>
+            {% if project.hasPublicRepo and project.repo %}
+                <a href="{{ project.repo }}" target="_blank" rel="noopener" role="button" class="secondary outline">GitHub</a>
+            {% endif %}
         </footer>
     </div>
 </article>

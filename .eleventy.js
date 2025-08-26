@@ -6,27 +6,6 @@ module.exports = function(eleventyConfig) {
   // Copy static assets
   eleventyConfig.addPassthroughCopy("assets");
   
-  // Add collection for featured projects
-  eleventyConfig.addCollection("featuredProjects", function(collection) {
-    const projects = collection.getAll()[0]?.data?.projects || [];
-    return projects.filter(project => project.featured);
-  });
-  
-  // Add collection for projects by category
-  eleventyConfig.addCollection("projectsByCategory", function(collection) {
-    const projects = collection.getAll()[0]?.data?.projects || [];
-    const categories = {};
-    
-    projects.forEach(project => {
-      if (!categories[project.category]) {
-        categories[project.category] = [];
-      }
-      categories[project.category].push(project);
-    });
-    
-    return categories;
-  });
-  
   // Date filter for project cards
   eleventyConfig.addFilter("dateFormat", function(date) {
     return new Date(date).toLocaleDateString('en-US', { 
@@ -35,14 +14,26 @@ module.exports = function(eleventyConfig) {
     });
   });
   
-  // Status badge filter
+  // Status badge filter with expanded options
   eleventyConfig.addFilter("statusBadge", function(status) {
     const badges = {
       'active': '🟢 Active',
       'beta': '🟡 Beta',
+      'suspended': '🟠 Suspended',
+      'deprecated': '🔴 Deprecated',
       'archived': '⚫ Archived'
     };
     return badges[status] || badges.active;
+  });
+  
+  // Filter for featured projects
+  eleventyConfig.addFilter("featured", function(projects) {
+    return projects.filter(project => project.featured);
+  });
+  
+  // Filter for projects by category
+  eleventyConfig.addFilter("byCategory", function(projects, category) {
+    return projects.filter(project => project.category === category);
   });
 
   return {

@@ -8,42 +8,44 @@ description: Portfolio site for parameterz.com showcasing my echocardiography pr
 <!-- Hero Section -->
 <section class="hero">
     <h1>Parameter<span class="brand-z">(z)</span> Projects</h1>
-    <a href="#featured" role="button" class="primary">Explore Projects</a>
-    <p>A collection of my echocardiography and medical projects, tools, and educational resources.</p>
+    <p>It all started with a question: <em>is this coronary artery dimension normal?</em></p>
+    <p>That turned into a spreadsheet (before Excel was a thing), which turned into a wep page (before there were mobile devices), which turned into a domain (<a target="_blank" rel="noopener" href="http://www.parameterz.com">www.parameterz.com</a>). </p>    
+    <p>Mine is a special brand of laziness. I would rather spend hours of time up front building a tool that will help save me moments of time on the backside of every echo. 
+    <p>
+        These are some of those tools.
+    </p>
 </section>
 
 <!-- Featured Projects Section -->
 <section id="featured" class="featured-section">
     <h2 class="section-title">Featured Projects</h2>
     <div class="projects-grid">
-        {% for project in projects %}
-            {% if project.featured %}
-                {% include "components/project-card.njk" %}
-            {% endif %}
+        {% for project in projects.projects | featured %}
+            {% include "components/project-card.njk" %}
         {% endfor %}
     </div>
 </section>
 
 <!-- All Projects by Category -->
-{% set categorizedProjects = collections.projectsByCategory %}
-{% for categoryName, categoryProjects in categorizedProjects %}
-    <section class="category-section">
-        <h2 class="category-title">{{ categoryName }}</h2>
-        <div class="projects-grid">
-            {% for project in categoryProjects %}
-                {% include "components/project-card.njk" %}
-            {% endfor %}
-        </div>
-    </section>
+{% set categories = ["Normal Values", "Echo/Clinical Tools", "Teaching", "Miscellaneous"] %}
+{% for categoryName in categories %}
+    {% set categoryProjects = projects.projects | byCategory(categoryName) %}
+    {% if categoryProjects.length > 0 %}
+        <section class="category-section">
+            <h2 class="category-title">{{ categoryName }}</h2>
+            <div class="projects-grid">
+                {% for project in categoryProjects %}
+                    {% include "components/project-card.njk" %}
+                {% endfor %}
+            </div>
+        </section>
+    {% endif %}
 {% endfor %}
 
 <!-- Call to Action Section -->
 <section class="cta-section" style="text-align: center; margin-top: 4rem; padding: 2rem; background: var(--pico-card-background-color); border-radius: var(--pico-border-radius);">
     <h2>Web Tools for Echocardiography</h2>
-    <p>Mine is a special brand of laziness. I would rather spend time up front building a tool that will help save me moments of time at the bedside. </p>
-    <p>
-        These are some of those tools.
-    </p>
+    <p></p>
     <p>
         <a href="https://github.com/parameterz" target="_blank" rel="noopener" role="button" class="outline">View All on GitHub</a>
     </p>
