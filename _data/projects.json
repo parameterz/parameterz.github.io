@@ -48,7 +48,7 @@
       "repo": "",
       "hasPublicRepo": false,
         "tags": ["echocardiography", "LV-Mass", "normal-values"],
-        "date": "2023-09-15",
+        "date": "2016-02-08",
         "status": "suspended"
     },
     {
@@ -76,6 +76,19 @@
         "tags": ["echocardiography", "prosthetic", "valves", "aortic", "mitral", "normal-values"],
         "date": "2024-11-17",
         "status": "active"
+    },
+    {
+        "title": "Borderline LV Calculations",
+        "description": "Calculates various scores (Rhodes, CHSS1 & 2, Discriminant) for the prediction of biventricular vs. uni-ventricular repair in the borderline LV.",
+        "image": "borderline.png",
+        "category": "Echo/Clinical Tools",
+        "featured": false,
+        "url": "http://dev.parameterz.com/borderline",
+        "hasPublicRepo": false,
+        "repo": "",
+        "tags": ["echocardiography", "borderline-LV", "congenital", "clinical-tools"],
+        "date": "2012-02-15",
+        "status": "suspended"
     }
   ]
 }
