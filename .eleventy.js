@@ -1,12 +1,15 @@
-// .eleventy.js
-// 11ty configuration file for parameterz.github.io portfolio
+// .eleventy.js - Updated for new field names
+// Eleventy configuration file for parameterz.github.io portfolio
 
 module.exports = function(eleventyConfig) {
   
   // Copy static assets
   eleventyConfig.addPassthroughCopy("assets");
   
-  // Date filter for project cards
+  // Watch TypeScript files and recompile data
+  eleventyConfig.addWatchTarget("./_data/**/*.ts");
+  
+  // Date filter for project cards (works with lastUpdated field)
   eleventyConfig.addFilter("dateFormat", function(date) {
     return new Date(date).toLocaleDateString('en-US', { 
       year: 'numeric', 

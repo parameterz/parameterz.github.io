@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "CommonJS",
+    "outDir": "_data",
+    "rootDir": "_data",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["_data/**/*.ts"],
+  "exclude": ["node_modules", "_site", "_data/**/*.js"]
+}

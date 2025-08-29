@@ -3,10 +3,12 @@
   "version": "0.0.2",
   "description": "Portfolio website for Parameter(z) medical and echocardiography projects",
   "scripts": {
-    "start": "eleventy --serve --watch",
-    "build": "eleventy",
-    "clean": "rm -rf _site",
-    "dev": "npm start"
+    "build:data": "tsc",
+    "build:data:watch": "tsc --watch",
+    "start": "npm run build:data && eleventy --serve --watch",
+    "build": "npm run build:data && eleventy",
+    "clean": "rm -rf _site && rm -f _data/**/*.js _data/**/*.js.map",
+    "dev": "npm run build:data:watch & eleventy --serve --watch"
   },
   "keywords": [
     "medical",
@@ -18,7 +20,9 @@
   "author": "Parameter(z)",
   "license": "MIT",
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.1"
+    "@11ty/eleventy": "^2.0.1",
+    "@types/node": "^24.3.0",
+    "typescript": "^5.9.2"
   },
   "repository": {
     "type": "git",

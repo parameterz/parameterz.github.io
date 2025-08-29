@@ -1,5 +1,5 @@
 <!-- _includes/components/project-card.njk -->
-<!-- Reusable project card component for parameterz portfolio -->
+<!-- Updated project card component with simplified repo logic -->
 <article class="project-card" data-status="{{ project.status }}">
     {% if project.image %}
         <div class="project-image">
@@ -22,7 +22,7 @@
             <h3><a href="{{ project.url }}" target="_blank" rel="noopener">{{ project.title }}</a></h3>
             <div class="project-meta">
                 <small class="project-status">{{ project.status | statusBadge }}</small>
-                <small class="project-date">Updated {{ project.date | dateFormat }}</small>
+                <small class="project-date">Updated {{ project.lastUpdated | dateFormat }}</small>
             </div>
         </header>
         
@@ -38,13 +38,12 @@
         
         <footer class="project-actions">
             <a href="{{ project.url }}" target="_blank" rel="noopener" role="button" class="primary">View Project</a>
-            {% if project.hasPublicRepo and project.repo %}
-                <a href="{{ project.repo }}" target="_blank" rel="noopener" role="button" class="secondary outline">GitHub</a>
+            {% if project.publicRepo %}
+                <a href="{{ project.publicRepo }}" target="_blank" rel="noopener" role="button" class="secondary outline">GitHub</a>
             {% endif %}
         </footer>
     </div>
 </article>
-
 <style>
 /* Project card styling */
 .project-card {
