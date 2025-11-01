@@ -21,6 +21,19 @@ interface Project {
 // Projects with the improved structure
 const projects: Project[] = [
   {
+    title: "PAAT-Thing",
+    description:
+      "Calculates PAAT-based estimated pulmonary pressures",
+    category: "Echo/Clinical Tools",
+    featured: true,
+    url: "https://github.com/parameterz/PAAT-Thing",
+    publicRepo: "https://github.com/parameterz/PAAT-Thing",
+    image: "paat.png",
+    tags: ["echocardiography", "PAAT", "pulmonary-pressure", "clinical-tools"],
+    lastUpdated: "2025-11-01",
+    status: "active",
+  },
+  {
     title: "Cardiac Scaling",
     description:
       "Explores various methods of scaling cardiac dimensions to body size, including allometric scaling. This is the companion site to a <a href='https://onlinejase.com/article/S0894-7317(25)00457-2/fulltext'> letter to the editors in JASE (2025)</a>.",
