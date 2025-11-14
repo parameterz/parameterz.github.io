@@ -21,6 +21,19 @@ interface Project {
 // Projects with the improved structure
 const projects: Project[] = [
   {
+    title: 
+    "Ascending Aorta Area & Diameter ULN by CMR",
+    description:
+      "Calculates upper limits of normal for ascending aorta area and diameter based on CMR data from the UK Biobank.",
+    category: "Normal Values",
+    featured: true,
+    url: "https://parameterz.github.io/aao-cmr/",
+    image: "aao-cmr.png",
+    tags: ["echocardiography", "aorta", "CMR", "normal-values"],
+    lastUpdated: "2025-11-13",
+    status: "active",
+  },
+  {
     title: "PAAT-Thing",
     description:
       "Calculates PAAT-based estimated pulmonary pressures",
