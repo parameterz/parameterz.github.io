@@ -20,6 +20,20 @@ interface Project {
 
 // Projects with the improved structure
 const projects: Project[] = [
+    {
+    title: "Myocardial Contraction Fraction (MCF) Calculator",
+    description:
+      "Calculates myocardial contraction fraction (MCF) from echocardiographic measurements.",
+    category: "Echo/Clinical Tools",
+    featured: true,
+    url: "https://parameterz.github.io/mcf/",
+    publicRepo: "https://github.com/parameterz/mcf",
+    tags: ["echocardiography", "myocardial", "contraction", "fraction"],
+    lastUpdated: "2026-01-26",
+    status: "active",
+    image: "mcf.png",
+  },
+
   {
     title: 
     "Ascending Aorta Area & Diameter ULN by CMR",
@@ -38,7 +52,7 @@ const projects: Project[] = [
     description:
       "Calculates PAAT-based estimated pulmonary pressures",
     category: "Echo/Clinical Tools",
-    featured: true,
+    featured: false,
     url: "https://github.com/parameterz/PAAT-Thing",
     publicRepo: "https://github.com/parameterz/PAAT-Thing",
     image: "paat.png",
@@ -121,7 +135,7 @@ const projects: Project[] = [
     description:
       "Based on the 2024 JASE Guidelines; values for surgical and trans-catheter valves in all positions.",
     category: "Normal Values",
-    featured: true,
+    featured: false,
     url: "https://phv.parameterz.com/",
     publicRepo: "https://github.com/parameterz/avr-mvr",
     image: "phv.png",
@@ -153,7 +167,7 @@ const projects: Project[] = [
     description:
       "Algorithm navigator for the assessment of diastolic function according to numerous guidelines.",
     category: "Echo/Clinical Tools",
-    featured: true,
+    featured: false,
     url: "https://parameterz.github.io/diastology/",
     publicRepo: "https://github.com/parameterz/diastology",
     tags: ["echocardiography", "diastology", "clinical-tools", "guidelines"],
