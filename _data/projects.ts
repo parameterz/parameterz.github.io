@@ -21,11 +21,25 @@ interface Project {
 // Projects with the improved structure
 const projects: Project[] = [
     {
+    title: "OMAM Aortic Root Calculator",
+    description:
+      "Calculates aortic root z-scores based on the OMAM (Optimized Multivariable Allometric Model) dataset.",
+    category: "Normal Values",
+    featured: true,
+    url: "https://parameterz.github.io/OMAM-Aortic-Root/",
+    publicRepo: "https://github.com/parameterz/OMAM-Aortic-Root",
+    image: "OMAM-Root.png",
+    tags: ["echocardiography", "aortic-root", "z-scores", "normal-values"],
+    lastUpdated: "2026-10-26",
+    status: "active",
+    },
+
+    {
     title: "Myocardial Contraction Fraction (MCF) Calculator",
     description:
       "Calculates myocardial contraction fraction (MCF) from echocardiographic measurements.",
     category: "Echo/Clinical Tools",
-    featured: true,
+    featured: false,
     url: "https://parameterz.github.io/mcf/",
     publicRepo: "https://github.com/parameterz/mcf",
     tags: ["echocardiography", "myocardial", "contraction", "fraction"],
