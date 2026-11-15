@@ -21,11 +21,23 @@ interface Project {
 // Projects with the improved structure
 const projects: Project[] = [
     {
+    title: "Aortic Root Reference Values",
+    description: "Replaces the previous aoroot.parameterz.com site with a more comprehensive set of normal values for adult aortic root dimensions.",
+    category: "Normal Values",
+    featured: true,
+    url: "https://aoroot.parameterz.com",
+    publicRepo: "https://github.com/parameterz/aoroot",
+    image: "OMAM-root.png",
+    tags: ["echocardiography", "aortic-root", "normal-values"],
+    lastUpdated: "2026-11-15",
+    status: "active",
+    },
+    {
     title: "OMAM Aortic Root Calculator",
     description:
       "Calculates aortic root z-scores based on the OMAM (Optimized Multivariable Allometric Model) dataset.",
     category: "Normal Values",
-    featured: true,
+    featured: false,
     url: "https://parameterz.github.io/OMAM-Aortic-Root/",
     publicRepo: "https://github.com/parameterz/OMAM-Aortic-Root",
     image: "OMAM-Root.png",

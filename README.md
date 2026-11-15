@@ -43,7 +43,7 @@ parameterz.github.io/
 
 ### Adding Your Projects
 
-Edit `_data/projects.json` with your actual projects:
+Edit `_data/projects.ts` with your actual projects:
 
 ```json
 {
