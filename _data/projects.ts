@@ -27,7 +27,7 @@ const projects: Project[] = [
     featured: true,
     url: "https://aoroot.parameterz.com",
     publicRepo: "https://github.com/parameterz/aoroot",
-    image: "OMAM-root.png",
+    image: "OMAM-Root.png",
     tags: ["echocardiography", "aortic-root", "normal-values"],
     lastUpdated: "2026-11-15",
     status: "active",
